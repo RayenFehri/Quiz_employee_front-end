@@ -26,16 +26,18 @@ export const StartScreen = () => {
   const { quiztitle, noofquestions, duration, noofinvitations, material, difficultylevel, creator, deadline, id_category } = quiz;
 
   return (
-    <div className='start-screen'>
-      <h2>Welcome to {quiztitle || 'The Trivia Quiz'}!</h2>
-      <h3>{noofquestions || 15} questions to test your general knowledge</h3>
-      <h3>Duration: {duration || 'Unknown'}</h3>
-      <h3>Number of invitations: {noofinvitations || 0}</h3>
-      <h3>Difficulty level: {difficultylevel || 'Unknown'}</h3>
-      <h3>Creator: {creator || 'Anonymous'}</h3>
-      <h3>Deadline: {deadline || 'No deadline set'}</h3>
-      <div className="game-mode">
-        <button className='btn2' value='easy' onClick={(e) => handleClick(e)} style={{ backgroundColor: "#0ee32a" }}>Start</button>
+    <div className='card'>
+      <div className='card-content'>
+        <h2 className='card-title'>Welcome to {quiztitle || 'The Trivia Quiz'}!</h2>
+        <p className='card-subtitle'>{noofquestions || 15} questions to test your general knowledge</p>
+        <p className='card-subtitle'>Duration: <span className={duration ? 'card-subtitle' : 'card-subtitle no-data'}>{duration || 'Unknown'}</span></p>
+        <p className='card-subtitle'>Number of invitations: <span className={noofinvitations ? 'card-subtitle' : 'card-subtitle no-data'}>{noofinvitations || 0}</span></p>
+        <p className='card-subtitle'>Difficulty level: <span className={difficultylevel ? 'card-subtitle' : 'card-subtitle no-data'}>{difficultylevel || 'Unknown'}</span></p>
+        <p className='card-subtitle'>Creator: <span className={creator ? 'card-subtitle' : 'card-subtitle no-data'}>{creator || 'Anonymous'}</span></p>
+        <p className='card-subtitle'>Deadline: <span className={deadline ? 'card-subtitle' : 'card-subtitle no-data'}>{deadline || 'No deadline set'}</span></p>
+        <div className="game-mode">
+          <button className='card-button' value='easy' onClick={(e) => handleClick(e)}>Start</button>
+        </div>
       </div>
     </div>
   );

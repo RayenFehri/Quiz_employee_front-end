@@ -43,12 +43,62 @@ body {
   flex-direction: column;
   margin: 0 auto;
 }
-.start-screen{
-  display: flex;
-  margin-top: 10px;
-  flex-direction: column;
-  text-align: center;
+/* CSS pour la carte améliorée avec des tailles augmentées */
+.card {
+  background-color: var(--color-dark);
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Ombre légèrement plus grande */
+  max-width: 800px; /* Limiter la largeur pour éviter qu'elle ne devienne trop grande */
+  margin: 0 auto; /* Centrer la carte horizontalement */
 }
+
+.card-content {
+  text-align: center; /* Centrer le contenu horizontalement */
+}
+
+/* CSS pour les titres personnalisés améliorés */
+.card-title {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  color: var(--color-light);
+}
+
+.card-subtitle {
+  font-size: 2.8rem;
+  margin-bottom: 1.6rem;
+  font-style: italic; /* Style italique pour les données manquantes */
+  color: var(--color-medium); }
+
+.no-data {
+  font-style: italic; /* Style italique pour les données manquantes */
+  color: var(--color-medium); /* Couleur plus claire pour les données manquantes */
+}
+
+
+.card-text {
+  font-size: 2.4rem; /* Taille de police augmentée */
+  margin-bottom: 1.6rem; /* Espacement plus grand entre les paragraphes */
+  color: var(--color-medium);
+}
+
+.card-button {
+  display: inline-block;
+  padding: 1.6rem 3.2rem; /* Taille de padding augmentée */
+  font-size: 2.4rem; /* Taille de police augmentée */
+  font-weight: bold;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #0ee32a;
+  color: var(--color-dark);
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0cc41a; /* Légère variation de couleur au survol */
+}
+
 .game-mode{
 
   display: flex;
