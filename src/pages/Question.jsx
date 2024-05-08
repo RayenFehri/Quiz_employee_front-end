@@ -39,7 +39,7 @@ export const Question = () => {
         <>
         <Progress/>
         <div className='question-cont'>
-          <div className='category' style={difficulty !== 'easy' ? styleCat : {}}>{difficulty} quiz</div>
+          <div className='category' style={difficulty !== 'easy' ? styleCat : {}}>Test Quiz</div>
           <h4>{statement}</h4>
           <div className="options">
             {options?.map(option=>{

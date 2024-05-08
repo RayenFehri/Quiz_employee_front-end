@@ -1,29 +1,28 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SocialMedia } from './SocialMedia';
-import { selectGameMode } from '../features/difficulty/difficultySlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { getQuestions } from '../features/questions/questionsSlice';
+import { getQuestions, selectQuizId } from '../features/questions/questionsSlice'; // Importez le sélecteur
 
 export const StartScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const quizId = useSelector(selectQuizId); // Utilisez le sélecteur pour obtenir l'ID du quiz
   const { quiz, status } = useSelector(state => state.questions);
 
   useEffect(() => {
-    dispatch(getQuestions());
+    dispatch(getQuestions()); // Vous pouvez laisser cette ligne telle quelle
   }, [dispatch]);
 
-  const handleClick = (e) => {
-    dispatch(selectGameMode(e.target.value));
-    navigate(`/quiz/${e.target.value}`);
+  const handleClick = () => {
+    console.log("iiiiiiiiiiiiiiidddddd:",quizId)
+    navigate(`/quiz/${quizId}`); // Utilisez l'ID du quiz obtenu à partir du sélecteur
   };
 
   if (status === 'loading') {
     return <div>Loading...</div>;
   }
 
-  const { quiztitle, noofquestions, duration, noofinvitations, material, difficultylevel, creator, deadline, id_category } = quiz;
+  const { quiztitle, noofquestions, duration, noofinvitations, difficultylevel, creator, deadline } = quiz;
 
   return (
     <div className='card'>
@@ -36,7 +35,7 @@ export const StartScreen = () => {
         <p className='card-subtitle'>Creator: <span className={creator ? 'card-subtitle' : 'card-subtitle no-data'}>{creator || 'Anonymous'}</span></p>
         <p className='card-subtitle'>Deadline: <span className={deadline ? 'card-subtitle' : 'card-subtitle no-data'}>{deadline || 'No deadline set'}</span></p>
         <div className="game-mode">
-          <button className='card-button' value='easy' onClick={(e) => handleClick(e)}>Start</button>
+          <button className='card-button' value='easy' onClick={handleClick}>Start</button>
         </div>
       </div>
     </div>
