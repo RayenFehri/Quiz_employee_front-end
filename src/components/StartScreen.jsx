@@ -27,7 +27,7 @@ export const StartScreen = () => {
   return (
     <div className='card'>
       <div className='card-content'>
-        <h2 className='card-title'>Welcome to {quiztitle || 'The Trivia Quiz'}!</h2>
+        <h2 className='card-title'>Welcome to {quiztitle || ' Quiz'}!</h2>
         <p className='card-subtitle'>{noofquestions || 15} questions to test your general knowledge</p>
         <p className='card-subtitle'>Duration: <span className={duration ? 'card-subtitle' : 'card-subtitle no-data'}>{duration || 'Unknown'}</span></p>
         <p className='card-subtitle'>Number of invitations: <span className={noofinvitations ? 'card-subtitle' : 'card-subtitle no-data'}>{noofinvitations || 0}</span></p>

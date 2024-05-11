@@ -34,7 +34,7 @@ export const FinishedScreen = () => {
                     quizid:quizId,
                     totalscore: maxPoints,
                     note: points,
-                    startingdate: "2022-02-05",
+                    startingdate: "2024-05-09",
                     endingdate: new Date().toISOString(),
                     email: email,
                     statut:congrats
