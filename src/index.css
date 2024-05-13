@@ -54,29 +54,33 @@ body {
 }
 
 .card-content {
-  text-align: center; /* Centrer le contenu horizontalement */
+  text-align:center; /* Centrer le contenu horizontalement */
 }
 
 /* CSS pour les titres personnalisés améliorés */
 .card-title {
   font-size: 3.2rem;
   margin-bottom: 2rem;
+  font-weight:bolder;
   color: var(--color-light);
 }
 
 .card-subtitle {
+  
   font-size: 2.8rem;
   margin-bottom: 1.6rem;
-  font-style: italic; /* Style italique pour les données manquantes */
+  font-style:normal; /* Style italique pour les données manquantes */
   color: var(--color-medium); }
+  
 
 .no-data {
-  font-style: italic; /* Style italique pour les données manquantes */
+  font-style: normal; /* Style italique pour les données manquantes */
   color: var(--color-medium); /* Couleur plus claire pour les données manquantes */
 }
 
 
 .card-text {
+  
   font-size: 2.4rem; /* Taille de police augmentée */
   margin-bottom: 1.6rem; /* Espacement plus grand entre les paragraphes */
   color: var(--color-medium);
